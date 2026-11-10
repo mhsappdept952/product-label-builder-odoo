@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Page sizes. Like Odoo's own Dymo format: for a custom size, height/width are swapped + Landscape. -->
+    <record id="paperformat_label_50x25" model="report.paperformat">
+        <field name="name">Label 50 x 25 mm</field>
+        <field name="default" eval="False"/>
+        <field name="format">custom</field>
+        <field name="page_height">50</field>
+        <field name="page_width">25</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="header_spacing">0</field>
+        <field name="disable_shrinking" eval="True"/>
+        <field name="dpi">96</field>
+    </record>
+
+    <record id="paperformat_label_60x40" model="report.paperformat">
+        <field name="name">Label 60 x 40 mm</field>
+        <field name="default" eval="False"/>
+        <field name="format">custom</field>
+        <field name="page_height">60</field>
+        <field name="page_width">40</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="header_spacing">0</field>
+        <field name="disable_shrinking" eval="True"/>
+        <field name="dpi">96</field>
+    </record>
+
+    <record id="paperformat_label_a4" model="report.paperformat">
+        <field name="name">A4 label sheet (no margins)</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="header_spacing">0</field>
+        <field name="disable_shrinking" eval="True"/>
+        <field name="dpi">96</field>
+    </record>
+
+    <!-- Reports (opened from the wizard only, so no "Print" menu binding) -->
+    <record id="action_report_label_50x25" model="ir.actions.report">
+        <field name="name">Product Labels 50 x 25 mm</field>
+        <field name="model">product.product</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">product_label_builder.report_label_50x25</field>
+        <field name="report_file">product_label_builder.report_label_50x25</field>
+        <field name="paperformat_id" ref="paperformat_label_50x25"/>
+        <field name="print_report_name">'Product labels 50x25'</field>
+    </record>
+
+    <record id="action_report_label_60x40" model="ir.actions.report">
+        <field name="name">Price Tags 60 x 40 mm</field>
+        <field name="model">product.product</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">product_label_builder.report_label_60x40</field>
+        <field name="report_file">product_label_builder.report_label_60x40</field>
+        <field name="paperformat_id" ref="paperformat_label_60x40"/>
+        <field name="print_report_name">'Price tags 60x40'</field>
+    </record>
+
+    <record id="action_report_label_a4_3x8" model="ir.actions.report">
+        <field name="name">Product Labels A4 (3 x 8)</field>
+        <field name="model">product.product</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">product_label_builder.report_label_a4_3x8</field>
+        <field name="report_file">product_label_builder.report_label_a4_3x8</field>
+        <field name="paperformat_id" ref="paperformat_label_a4"/>
+        <field name="print_report_name">'Product labels A4'</field>
+    </record>
+</odoo>

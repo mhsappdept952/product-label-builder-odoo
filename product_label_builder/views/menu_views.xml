@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Product list of the Product Labels app, with a Print Labels button -->
+    <record id="product_label_builder_product_list" model="ir.ui.view">
+        <field name="name">product.product.list.label.builder</field>
+        <field name="model">product.product</field>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <list string="Products" create="false">
+                <header>
+                    <button name="action_open_label_builder" type="object" string="Print Labels"
+                            class="btn-primary" display="always"/>
+                </header>
+                <field name="default_code" optional="show"/>
+                <field name="name"/>
+                <field name="product_template_variant_value_ids" widget="many2many_tags" optional="show"/>
+                <field name="barcode" optional="show"/>
+                <field name="lst_price" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_product_label_builder_products" model="ir.actions.act_window">
+        <field name="name">Product Labels</field>
+        <field name="res_model">product.product</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_ids" eval="[Command.clear(),
+            Command.create({'view_mode': 'list', 'view_id': ref('product_label_builder_product_list')})]"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No products yet</p>
+            <p>Create products in Sales, Purchase or Inventory, then print their labels here.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_product_label_builder_root" name="Product Labels" sequence="95"
+              web_icon="product_label_builder,static/description/icon.png"/>
+    <menuitem id="menu_product_label_builder_products" name="Print Labels" sequence="10"
+              parent="menu_product_label_builder_root" action="action_product_label_builder_products"/>
+</odoo>
