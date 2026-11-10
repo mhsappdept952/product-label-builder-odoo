@@ -29,12 +29,16 @@
         </t>
     </template>
 
-    <!-- Odoo's PDF body is a Bootstrap "container" (padding) or, without styles, has the browser's 8 px
-         margin: either one shifts every label ~2 mm to the right. This resets it; it sits inside the
-         article because Odoo keeps only the articles. -->
+    <!-- Odoo's PDF body is a Bootstrap "container" (padding, plus 11 mm with o_css_margins) or, without
+         styles, has the browser's 8 px margin: either one shifts every label to the right. And Bootstrap's
+         table reset (border-style: solid on table rows and cells) makes wkhtmltopdf draw a line around every
+         table, row and cell of the label. This resets both; it sits inside the article because Odoo keeps
+         only the articles. -->
     <template id="label_page_reset">
         <style>html, body { margin: 0 !important; padding: 0 !important; }
-            body.container { max-width: none !important; width: auto !important; }</style>
+            body.container { max-width: none !important; width: auto !important; }
+            .article table, .article thead, .article tbody, .article tfoot, .article tr, .article th, .article td {
+                border: 0 none !important; border-width: 0 !important; }</style>
     </template>
 
     <!-- Every report is one "article": Odoo then wraps it in its minimal layout (UTF-8, report styles).
