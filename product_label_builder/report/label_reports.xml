@@ -55,7 +55,6 @@
         <field name="model">product.product</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">product_label_builder.report_label_50x25</field>
-        <field name="report_file">product_label_builder.report_label_50x25</field>
         <field name="paperformat_id" ref="paperformat_label_50x25"/>
         <field name="print_report_name">'Product labels 50x25'</field>
     </record>
@@ -65,7 +64,6 @@
         <field name="model">product.product</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">product_label_builder.report_label_60x40</field>
-        <field name="report_file">product_label_builder.report_label_60x40</field>
         <field name="paperformat_id" ref="paperformat_label_60x40"/>
         <field name="print_report_name">'Price tags 60x40'</field>
     </record>
@@ -75,7 +73,6 @@
         <field name="model">product.product</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">product_label_builder.report_label_a4_3x8</field>
-        <field name="report_file">product_label_builder.report_label_a4_3x8</field>
         <field name="paperformat_id" ref="paperformat_label_a4"/>
         <field name="print_report_name">'Product labels A4'</field>
     </record>

@@ -1,0 +1,3 @@
+id,name,model_id,group_id/id,operation,domain
+access_product_label_builder_wizard,product.label.builder.wizard,product.label.builder.wizard,base.group_user,crud,
+access_product_label_builder_line,product.label.builder.line,product.label.builder.line,base.group_user,crud,

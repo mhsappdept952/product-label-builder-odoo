@@ -1,6 +1,6 @@
 {
     'name': 'Odoo Product Label Builder – Free | Barcode & Price Labels (PDF)',
-    'version': '19.0.1.0.0',
+    'version': '20.0.1.0.0',
     'category': 'Inventory/Inventory',
     'summary': 'Free product label builder for Odoo: print barcode labels, price tags and A4 label sheets as PDF '
                'from the product list. Choose products, quantities and a layout - no setup, no extra libraries.',
@@ -21,7 +21,7 @@ Need your own label layouts, price-list offers or direct printing to Zebra (ZPL)
     'support': 'support@nexmosaictechnologies.com',
     'depends': ['product'],
     'data': [
-        'security/ir.model.access.csv',
+        'security/ir.access.csv',
         'report/label_reports.xml',
         'report/label_templates.xml',
         'wizard/label_builder_wizard_views.xml',
