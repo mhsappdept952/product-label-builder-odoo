@@ -19,15 +19,15 @@
                     </group>
                 </group>
                 <field name="line_ids">
-                    <list editable="bottom">
+                    <tree editable="bottom">
                         <field name="product_id"/>
                         <field name="barcode"/>
                         <field name="quantity"/>
-                    </list>
+                    </tree>
                 </field>
                 <div class="alert alert-info mt-3 mb-0" role="status">
                     Need your own label layouts, price-list offers or direct printing to Zebra (ZPL) and TSC / Rongta label printers?
-                    <a href="https://apps.odoo.com/apps/modules/19.0/label_studio_pro" target="_blank">Odoo Product Label Builder PRO</a>
+                    <a href="https://apps.odoo.com/apps/modules/17.0/label_studio_pro" target="_blank">Odoo Product Label Builder PRO</a>
                 </div>
                 <footer>
                     <button name="action_print" type="object" string="Print" class="btn-primary" data-hotkey="q"/>

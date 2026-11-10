@@ -6,7 +6,7 @@
         <field name="model">product.product</field>
         <field name="priority">100</field>
         <field name="arch" type="xml">
-            <list string="Products" create="false">
+            <tree string="Products" create="false">
                 <header>
                     <button name="action_open_label_builder" type="object" string="Print Labels"
                             class="btn-primary" display="always"/>
@@ -16,16 +16,16 @@
                 <field name="product_template_variant_value_ids" widget="many2many_tags" optional="show"/>
                 <field name="barcode" optional="show"/>
                 <field name="lst_price" optional="show"/>
-            </list>
+            </tree>
         </field>
     </record>
 
     <record id="action_product_label_builder_products" model="ir.actions.act_window">
         <field name="name">Product Labels</field>
         <field name="res_model">product.product</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">tree,form</field>
         <field name="view_ids" eval="[Command.clear(),
-            Command.create({'view_mode': 'list', 'view_id': ref('product_label_builder_product_list')})]"/>
+            Command.create({'view_mode': 'tree', 'view_id': ref('product_label_builder_product_list')})]"/>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">No products yet</p>
             <p>Create products in Sales, Purchase or Inventory, then print their labels here.</p>
